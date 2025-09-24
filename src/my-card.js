@@ -19,6 +19,7 @@ export class MyCard extends LitElement {
     that is pristine and often reflects the surrounding mountains, trees, and sky.`;
     this.image = "https://media.istockphoto.com/id/521200806/photo/idyllic-summer-landscape-with-clear-mountain-lake-in-the-alps.jpg?s=612x612&w=0&k=20&c=ndMwgDkoWEBJE8ZaL0Nfe2Cpvr5AB0FkE945itl-KKA="; 
     this.alt="Alps Mountain and Lake";
+    this.fancy = false;
   }
 
   static get styles() {
@@ -27,6 +28,11 @@ export class MyCard extends LitElement {
         display: inline-block;
         text-align: center;
       }
+
+      :host([fancy]) .card {
+        background-color: var(--my-card-fancy-bg, lightblue);
+      }
+
       h1 {
         text-align: center;
 
@@ -56,8 +62,9 @@ export class MyCard extends LitElement {
         max-width: 350px;
         height: 200px;
         object-fit: cover;
-        border-radius: 4px;
+        border-radius: 8px;
         margin-bottom: 12px;
+        margin-top: 12px;
       }
 
       .details {
@@ -67,6 +74,28 @@ export class MyCard extends LitElement {
         font-size: 25px;
         text-decoration-line: underline;
         text-decoration-color: green;
+      }
+      details summary {
+        text-align: center;
+        font-size: 20px;
+        padding: 8px 0;
+        overflow-y: auto; 
+        
+      }
+      details[open] summary {
+        font-weight: bold;
+      }
+      details div {
+        border: 2px solid black;
+        text-align: left;
+        padding: 8px;
+        height: 70px;
+        overflow: auto;
+      }
+      .desc {
+        height: 100px;
+        overflow: auto;
+
       }
 
       .bg-toggle {
@@ -90,7 +119,12 @@ export class MyCard extends LitElement {
   render() {
     return html`<div class="card">
     <h1>${this.title}</h1>
-    <p>${this.description}</p>
+    <details ?open="${this.fancy}" @toggle="${this.openChanged}">
+    <summary>Fancyyy</summary>
+    <p class="desc">
+      <slot></slot>
+    </p>
+    </details>
     <img src="${this.image}" alt="${this.alt}" />
     <div>
       <button>
@@ -102,6 +136,10 @@ export class MyCard extends LitElement {
   
   ;
   }
+  
+  openChanged(event) {
+    this.fancy = event.target.open;
+  }
 
   static get properties() {
     return {
@@ -109,7 +147,8 @@ export class MyCard extends LitElement {
       description: { type: String },
       image: { type: String },
       cards: { type: Array },
-      alt: { type: String}
+      alt: { type: String},
+      fancy: { type: Boolean, reflect: true}
     };
   }
 }

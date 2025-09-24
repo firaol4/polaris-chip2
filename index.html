@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="Description" content="Boilerplate for polaris chip">
   <base href="/">
+  
 
   <style>
     :root,
@@ -22,6 +23,13 @@
       
     }
   </style>
+
+  <style>
+    my-card[fancy] {
+      --my-card-fancy-bg: #b710d8;
+    }
+  </style>
+  
   <title>polaris-chip / my-card</title>
 </head>
 
@@ -34,14 +42,27 @@
   <polaris-chip title="Grants and donations"></polaris-chip>
 
   <h1>my-card</h1>
-  <my-card></my-card>
-  <my-card title="Mount nittany" description="Mount Everest is Earth's highest point above sea level, 
-  a majestic peak in the Himalayan mountain range on the border of 
-  Nepal and Tibet, China." image="https://cdn.britannica.com/54/155954-050-6568A963/massif-Mount-Everest-Himalayas-Nepal.jpg" alt="Mount Everest">
+  <my-card fancy>A clear mountain lake in the Alps is a cold, high-elevation body of water
+    that is pristine and often reflects the surrounding mountains, trees, and sky.
   </my-card>
-  <my-card title="Mount Olympus" description="Mount Olympus is the highest mountain in Greece and a prominent feature of Greek mythology, believed to be the home of the Twelve Olympian gods, including Zeus and Hera." image="https://cdn.britannica.com/04/148004-050-7BA47415/Mount-Olympus-Greece.jpg" alt="Mount Olympus"></my-card>
-  <my-card title="Mount Fuji" description="Mount Fuji is Japan's tallest mountain and highest peak, a beautifully symmetrical, snow-capped stratovolcano with a characteristic cone shape, reaching 3,776 meters (12,389 feet) above sea level." image="https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg" alt="Mount Fuji"></my-card>
-  <my-card title="Mount K2" description="K2 is a majestic, brutal Savage Mountain and the world's second-highest peak (8,611 m / 28,251 ft), located in the Karakoram Range on the China-Pakistan border" image="https://cdn.britannica.com/14/75514-120-05A119F2/K2-district-Karakoram-Range-portion-Gilgit-Baltistan-region.jpg" alt="K2 Mountain"></my-card>
+  <my-card title="Mount nittany" image="https://cdn.britannica.com/54/155954-050-6568A963/massif-Mount-Everest-Himalayas-Nepal.jpg"  alt="Mount Everest">
+    Mount Everest is Earth's highest point above sea level, 
+    a majestic peak in the Himalayan mountain range on the border of 
+    Nepal and Tibet, China.
+  </my-card>
+  <my-card title="Mount Olympus" image="https://cdn.britannica.com/04/148004-050-7BA47415/Mount-Olympus-Greece.jpg" alt="Mount Olympus">
+    Mount Olympus is the highest mountain in Greece and a prominent feature of Greek mythology, 
+    believed to be the home of the Twelve Olympian gods, including Zeus and Hera.
+  </my-card>
+  <my-card title="Mount Fuji" image="https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg" alt="Mount Fuji">
+    Mount Fuji is Japan's tallest mountain and highest peak, a beautifully symmetrical, 
+    snow-capped stratovolcano with a characteristic cone shape, 
+    reaching 3,776 meters (12,389 feet) above sea level.
+  </my-card>
+  <my-card title="Mount K2" image="https://cdn.britannica.com/14/75514-120-05A119F2/K2-district-Karakoram-Range-portion-Gilgit-Baltistan-region.jpg" alt="K2 Mountain">
+    K2 is a majestic, brutal Savage Mountain and the world's second-highest peak (8,611 m / 28,251 ft), 
+    located in the Karakoram Range on the China-Pakistan border.
+  </my-card>
   
   
 
